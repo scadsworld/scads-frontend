@@ -12,11 +12,11 @@ const ThemeToggler = ({ value }) => {
     <button
       onClick={themeToggleHandler}
       className={`
-        w-12 
-        h-6 
+        w-14 
+        h-8
         rounded-full 
         p-1 
-        ${theme ? "bg-white" : "bg-[#0D0D0D]"}
+        ${theme ? "bg-[#DBDBDB]" : "bg-[#0D0D0D]"}
         relative 
         transition-colors 
         duration-500 
@@ -27,8 +27,8 @@ const ThemeToggler = ({ value }) => {
         id="toggle"
         className={`
             rounded-full 
-            w-4 
-            h-4 
+            w-6 
+            h-6 
             relative
            ${theme ? "ml-6" : " ml-0"} 
             pointer-events-none 
@@ -38,9 +38,15 @@ const ThemeToggler = ({ value }) => {
         `}
       >
         {theme ? (
-          <img src={moon} className="invert" width={30} height={30} alt="" />
+          <img
+            src={moon}
+            className="invert"
+            height={40}
+            width={40}
+            alt="moon"
+          />
         ) : (
-          <img src={sun} width={30} className="invert" height={30} alt="" />
+          <img src={sun} className="invert" height={40} width={40} alt="sun" />
         )}
       </div>
     </button>

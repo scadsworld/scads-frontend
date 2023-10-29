@@ -1,4 +1,7 @@
+import { motion } from "framer-motion";
+
 import Disclaimer from "../components/Layout/Disclaimer/Disclaimer";
+import Footer from "../components/Layout/Footer";
 import Header from "../components/Layout/Header/Header";
 import LivePrices from "../components/Layout/LivePrices/LivePrices";
 import Predictability from "../components/Layout/Predictability/Predictability";
@@ -6,15 +9,23 @@ import Tokenomics from "../components/Layout/Tokenomics/Tokenomics";
 import Wallets from "../components/Layout/Wallets/Wallets";
 
 const Home = ({ value }) => {
+  const { theme } = value;
+
   return (
-    <>
-      <Header />
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Header value={value} />
       <LivePrices value={value} />
       <Predictability value={value} />
       <Wallets value={value} />
       <Tokenomics value={value} />
       <Disclaimer value={value} />
-    </>
+      <Footer theme={theme} className={"mt-24"} />
+    </motion.main>
   );
 };
 

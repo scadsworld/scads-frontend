@@ -1,8 +1,12 @@
 import { social_icons } from "../../database/items-database";
 
-const Footer = ({ theme }) => {
+const Footer = (props) => {
+  const { theme } = props;
+
   return (
-    <div className="flex flex-col justify-center items-center mt-24 pb-10 gap-6">
+    <div
+      className={`flex flex-col justify-center items-center pb-10 lg:pb-2 gap-6 ${props.className}`}
+    >
       <div className="flex gap-5">
         {social_icons.map((item) => (
           <button key={item.id}>
@@ -10,7 +14,7 @@ const Footer = ({ theme }) => {
           </button>
         ))}
       </div>
-      <p className={`font-['Lato'] text-lg ${theme && "text-white"}`}>
+      <p className={`font-['Lato'] text-lg ${theme && "text-[#B6B6B6]"}`}>
         SCADS © Copyright 2023. All rights reserved.
       </p>
     </div>

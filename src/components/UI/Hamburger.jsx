@@ -2,7 +2,7 @@ const Hamburger = ({ value }) => {
   const { theme, setIsOpen, isOpen } = value;
 
   const genericHamburgerLine = `h-1 w-6 my-1 ${
-    theme ? "bg-white" : "bg-black"
+    theme ? "bg-[#DBDBDB]" : "bg-black"
   } transition ease transform duration-300`;
 
   return (
