@@ -10,16 +10,6 @@ import Card from "../UI/Card";
 
 const Navbar = ({ value }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [colorChange, setColorchange] = useState(false);
-
-  const changeNavbarColor = () => {
-    if (window.scrollY >= 80) {
-      setColorchange(true);
-    } else {
-      setColorchange(false);
-    }
-  };
-  window.addEventListener("scroll", changeNavbarColor);
 
   const { theme, setOnScreen, onScreen } = value;
 
@@ -28,14 +18,8 @@ const Navbar = ({ value }) => {
 
   if (theme) {
     textClass = "text-[#B6B6B6]";
-    if (colorChange) {
-      bgClass = "bg-[#191919]";
-    }
   } else {
     textClass = "text-black";
-    if (colorChange) {
-      bgClass = "bg-[#E2E6E9]";
-    }
   }
 
   return (
