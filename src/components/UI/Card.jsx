@@ -3,10 +3,10 @@ const Card = (props) => {
 
   return (
     <div
-      className={`backdrop-filter backdrop-blur-sm bg-opacity-20 ${
+      className={`backdrop-filter backdrop-blur-[4.5px] bg-opacity-30 ${
         theme
-          ? "bg-[#424242] text-[#B6B6B6] shadow-sm shadow-[#484850]"
-          : "bg-white text-black shadow-sm shadow-white"
+          ? "bg-[#58585E] text-[#B6B6B6] shadow-sm shadow-[#ffffff20]"
+          : "bg-[rgba(255,255,255,0.6)] text-black shadow-sm shadow-white"
       } rounded-[30px] lg:px-10 ${props.className}`}
     >
       {children}

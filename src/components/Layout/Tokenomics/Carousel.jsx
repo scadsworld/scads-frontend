@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSpringCarousel } from "react-spring-carousel";
 
-import { tokenomics } from "../../../database/items-database";
+import { tokenomics } from "../../../Tools/items-database";
 import arrow from "../../../assets/Arrow.svg";
 
 const Carousel = ({ value }) => {
@@ -53,13 +53,17 @@ const Carousel = ({ value }) => {
       {carouselFragment}
       <div className="flex justify-center gap-10 lg:mt-14">
         <button onClick={slideToPrevItem}>
-          <img src={arrow} className="rotate-180 invert" alt="" />
+          <img
+            src={arrow}
+            className={`rotate-180 ${theme && "invert"}`}
+            alt="prev"
+          />
         </button>
         <div>
           {activeItem + 1} / {tokenomics.length}
         </div>
         <button onClick={slideToNextItem}>
-          <img src={arrow} className="invert" alt="" />
+          <img src={arrow} className={`${theme && "invert"}`} alt="next" />
         </button>
       </div>
     </div>

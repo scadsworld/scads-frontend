@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { opacityVariants } from "../../../database/variants";
+import { opacityVariants } from "../../../Tools/variants";
 
 const textOpacity = opacityVariants;
 
@@ -12,16 +12,16 @@ const Disclaimer = ({ value }) => {
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
       variants={textOpacity}
-      className={`flex flex-col items-center font-['Lato'] text-center gap-8 mt-24 ${
+      className={`flex flex-col items-center font-['Poppins'] text-center lg:text-start gap-8 mt-24 ${
         theme ? "text-[#B6B6B6]" : "text-black"
       }`}
     >
       <h1 className="text-2xl">Disclaimer</h1>
-      <p className="text-sm max-w-[333px] lg:max-w-[814px]">
+      <p className="text-sm max-w-[333px] lg:max-w-[1000px]">
         While the SCADS algorithm guarantees the stability of SCADS as a stable
-        coin and assures that LAVISH is a linear token with a constant growth
-        rate for each minted LAVISH, it is important to note that SCADS cannot
-        be held responsible for events such as global internet failure, nuclear
+        coin and assures that TWINE is a linear token with a constant growth
+        rate for each minted TWINE, it is important to note that SCADS cannot be
+        held responsible for events such as global internet failure, nuclear
         war, or users not securely safeguarding their passwords or seed phrases.
         The algorithm remains impervious to market conditions, inflation, or
         recession. The SCADS algorithm is fully autonomous, self-maintained, and

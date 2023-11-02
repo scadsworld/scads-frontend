@@ -1,15 +1,14 @@
 import { motion } from "framer-motion";
-import { wallets } from "../../../database/items-database";
+import { wallets } from "../../../Tools/items-database";
 import {
   imgVariants,
   opacityVariants,
   walletCardVariants,
-} from "../../../database/variants";
+} from "../../../Tools/variants";
 import Card from "../../UI/Card";
-import wallet_img from "../../../assets/wallet-image.png";
-import wallet_img_dark from "../../../assets/wallet-image-dark.png";
-import wallets_img_mobile from "../../../assets/wallets-bg-mobile.png";
-import arrow from "../../../assets/wallet-arrow.svg";
+import wallet_img from "../../../assets/wallet-image.webp";
+import wallet_img_dark from "../../../assets/wallet-image-dark.webp";
+import wallets_img_mobile from "../../../assets/wallets-bg-mobile.webp";
 
 const isMobile = window.innerWidth < 768;
 let cardVariants = {};
@@ -32,7 +31,7 @@ const Wallets = ({ value }) => {
   };
 
   return (
-    <div className="container mx-auto flex flex-col relative mt-48">
+    <div className="container mx-auto flex flex-col relative mt-40">
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -52,7 +51,7 @@ const Wallets = ({ value }) => {
         alt=""
       />
       <div className="flex flex-col justify-center items-start gap-2 lg:gap-8 md:max-w-[700px] lg:max-w-[1100px] mx-auto mt-10">
-        <h1 className="relative z-10 text-white text-2xl lg:text-[40px] font-bold font-['Montserrat'] ms-10">
+        <h1 className="relative z-10 text-white text-2xl lg:text-[40px] font-bold font-['Poppins'] ms-10">
           Wallets
         </h1>
         <motion.div
@@ -69,7 +68,7 @@ const Wallets = ({ value }) => {
                   whileInView="onscreen"
                   viewport={{ once: true, amount: 0.8 }}
                   variants={textOpacity}
-                  className="flex flex-col gap-5 font-['Montserrat'] ps-6 pe-20 md:ps-0 md:pe-0"
+                  className="flex flex-col gap-5 font-['Poppins'] ps-6 pe-20 md:ps-0 md:pe-0"
                   key={item.id}
                 >
                   <h1 className="text-[#7768E5] font-bold text-xl lg:text-2xl">
@@ -82,14 +81,16 @@ const Wallets = ({ value }) => {
                   >
                     {item.description}
                   </p>
-                  <button
-                    onClick={handleClickScroll}
-                    className="text-[#7768E5] text-sm lg:text-base flex items-center gap-[6px]"
-                  >
-                    Learn more <img src={arrow} alt="" />
-                  </button>
                 </motion.div>
               ))}
+            </div>
+            <div className="flex justify-center py-7">
+              <button
+                className="bg-[#7E57FF] py-[14px] px-9 rounded-[30px] font-semibold text-white text-xl hover:bg-[#511DFF] transition-all duration-300 focus:ring-0 focus:outline-none"
+                onClick={handleClickScroll}
+              >
+                More Info
+              </button>
             </div>
           </Card>
         </motion.div>

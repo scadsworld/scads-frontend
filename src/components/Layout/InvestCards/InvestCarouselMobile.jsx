@@ -2,12 +2,13 @@ import { useState } from "react";
 import { useSpringCarousel } from "react-spring-carousel";
 
 import arrow from "../../../assets/Arrow.svg";
-import lavish_img from "../../../assets/lavish_img.svg";
-import tooltip from "../../../assets/tooltip.svg";
+import TWINE_img from "../../../assets/lavish_img.svg";
 import Card from "../../UI/Card";
 
-const InvestCarouselMobile = () => {
+const InvestCarouselMobile = ({ value }) => {
   const [activeItem, setActiveItem] = useState(0);
+
+  const { theme } = value;
 
   const {
     carouselFragment,
@@ -19,10 +20,19 @@ const InvestCarouselMobile = () => {
       {
         id: 0,
         renderItem: (
-          <Card className="flex flex-col items-center mx-auto font-['Lato'] py-5 px-10 mt-3 h-[490px] w-[293px] text-[#B6B6B6]">
+          <Card
+            className={`flex flex-col items-center mx-auto font-['Poppins'] py-5 px-10 mt-3 w-[293px] ${
+              theme ? "text-white" : "text-black"
+            }`}
+            theme={theme}
+          >
             {" "}
-            <h1 className="text-lg text-center">Claim Earned LAVISH</h1>
-            <div className="flex items-center gap-2 mt-3">
+            <h1 className="text-lg text-center">Claim Earned TWINE</h1>
+            <div
+              className={`flex items-center gap-2 mt-3 ${
+                theme ? "text-white" : "text-black"
+              }`}
+            >
               <div className="flex flex-col items-center gap-1">
                 <ul className="list-disc text-sm">
                   <li>GAS</li>
@@ -35,12 +45,7 @@ const InvestCarouselMobile = () => {
                 <span>3%</span>
                 <span>3%</span>
               </div>
-              <div className="flex flex-col justify-center gap-3">
-                <img src={tooltip} alt="" />
-                <img src={tooltip} alt="" />
-                <img src={tooltip} alt="" />
-              </div>
-              <img src={lavish_img} className="ms-14" alt="" />
+              <img src={TWINE_img} className="ms-14" alt="" />
             </div>
             <span className="mt-4 text-sm">SCADS Owned: 0 Scads</span>
             <div className="flex flex-col items-center gap-1 mt-7">
@@ -51,31 +56,36 @@ const InvestCarouselMobile = () => {
             </div>
             <div className="flex justify-center gap-16 mt-7">
               <div className="flex flex-col gap-1">
-                <p className="text-sm">LAVISH Claimed:</p>
-                <p className="text-sm">LAVISH Rewarded:</p>
+                <p className="text-sm">TWINE Claimed:</p>
+                <p className="text-sm">TWINE Rewarded:</p>
               </div>
               <div className="flex flex-col gap-1">
-                <p className="text-sm">0 LAVISH</p>
-                <p className="text-sm">0 LAVISH</p>
+                <p className="text-sm">0 TWINE</p>
+                <p className="text-sm">0 TWINE</p>
               </div>
             </div>
             <div className="mt-5">
-              <button className="border-b-2 border-white font-['Montserrat'] text-xl">
+              <button
+                className={`border-b-2 ${
+                  theme ? "border-white" : "border-black"
+                } font-['Poppins'] text-xl`}
+              >
                 Connect Wallet
               </button>
             </div>
-            <span className="mt-5 opacity-75 max-w-[223px] text-center text-xs">
-              Customers can only claim a WHOLE LAVISH token. Partial withdrawals
-              are not supported
-            </span>
           </Card>
         ),
       },
       {
         id: 1,
         renderItem: (
-          <Card className="flex flex-col items-center mx-auto font-['Lato'] py-5 mt-3 w-[293px] h-[490px] text-[#B6B6B6]">
-            <h1 className="text-lg text-center">Buy SCADS with LAVISH</h1>
+          <Card
+            className={`flex flex-col items-center mx-auto font-['Poppins'] py-5 mt-3 w-[293px] text-[#B6B6B6] ${
+              theme ? "text-white" : "text-black"
+            }`}
+            theme={theme}
+          >
+            <h1 className="text-lg text-center">Buy SCADS with TWINE</h1>
             <div className="flex items-center gap-2 mt-8">
               <div className="flex flex-col items-center gap-1 text-sm">
                 <ul className="list-disc">
@@ -89,31 +99,39 @@ const InvestCarouselMobile = () => {
                 <span>3%</span>
                 <span>3%</span>
               </div>
-              <img src={lavish_img} className="ms-14" alt="" />
+              <img src={TWINE_img} className="ms-14" alt="" />
             </div>
             <div className="mb-7 mt-16">
               <div className="flex flex-col gap-[2px]">
-                <label htmlFor="crypto_token" className="text-sm">
-                  LAVISH
+                <label htmlFor="crypto_token" className="text-sm md:ms-0">
+                  TWINE
                 </label>
                 <input
                   type="text"
-                  className="border border-white rounded-[10px] py-[4px] px-1 lg:w-[235px] bg-transparent"
+                  className={`border ${
+                    theme ? "border-white" : "border-black"
+                  } rounded-[10px] py-[4px] px-1 w-[235px] bg-transparent mx-auto`}
                   placeholder="0.0"
                 />
               </div>
               <div className="flex flex-col mt-8">
-                <label htmlFor="scads" className="text-sm">
+                <label htmlFor="scads" className="text-sm md:ms-0">
                   Scads
                 </label>
                 <input
                   type="text"
-                  className="border border-white rounded-[10px] py-[4px] px-1 lg:w-[235px] bg-transparent"
+                  className={`border ${
+                    theme ? "border-white" : "border-black"
+                  } rounded-[10px] py-[4px] px-1 w-[235px] bg-transparent mx-auto`}
                   placeholder="0.0"
                 />
               </div>
             </div>
-            <button className="border-b-2 border-white font-['Montserrat'] text-xl">
+            <button
+              className={`border-b-2 ${
+                theme ? "border-white" : "border-black"
+              }  font-['Poppins'] text-xl`}
+            >
               Connect Wallet
             </button>
           </Card>
@@ -131,11 +149,13 @@ const InvestCarouselMobile = () => {
   return (
     <div className="container mx-auto flex flex-col items-center overflow-hidden lg:hidden">
       {carouselFragment}
-      <div className="flex justify-center gap-10 mt-4 lg:mt-14">
+      <div className="flex justify-center gap-10 mt-10">
         <button onClick={slideToPrevItem}>
           <img src={arrow} className="rotate-180" alt="" />
         </button>
-        <div>{activeItem + 1} / 2</div>
+        <div className={`${theme ? "text-white" : "text-black"}`}>
+          {activeItem + 1} / 2
+        </div>
         <button onClick={slideToNextItem}>
           <img src={arrow} alt="" />
         </button>

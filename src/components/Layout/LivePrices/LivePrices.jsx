@@ -1,10 +1,10 @@
-import { prices } from "../../../database/items-database";
+import { prices } from "../../../Tools/items-database";
 import { motion } from "framer-motion";
 
-import donuts from "../../../assets/donuts.png";
+import donuts from "../../../assets/donuts.webp";
 import Card from "../../UI/Card";
-import { priceCardVariants } from "../../../database/variants";
-import mobile_bg from "../../../assets/prices-bg.png";
+import { priceCardVariants } from "../../../Tools/variants";
+import mobile_bg from "../../../assets/prices-bg.webp";
 
 const isMobile = window.innerWidth < 768;
 
@@ -26,7 +26,7 @@ const LivePrices = ({ value }) => {
       />
       <img
         src={donuts}
-        className="absolute z-0 w-screen hidden md:block bottom-0 lg:-bottom-32"
+        className="absolute z-0 w-screen hidden md:block bottom-0 lg:-bottom-24 xl:-bottom-36"
         alt=""
       />
       <motion.div
@@ -36,13 +36,13 @@ const LivePrices = ({ value }) => {
       >
         <motion.div variants={priceCardPosition}>
           <Card theme={theme}>
-            <div className="flex flex-col items-center md:flex-row lg:gap-24 py-6 px-7 lg:py-0 lg:px-0 w-[326px] md:w-full rounded-[30px] lg:bg-none">
+            <div className="flex flex-col items-center md:flex-row lg:gap-16 xl:gap-24 py-6 px-7 lg:py-0 lg:px-0 w-[326px] md:w-full rounded-[30px] lg:bg-none">
               {prices.map((item) => (
                 <div
-                  className="flex flex-row-reverse items-center md:flex-col gap-10 lg:gap-4 font-['Montserrat'] text-center py-8 relative z-10"
+                  className="flex flex-row-reverse items-center md:flex-col gap-10 lg:gap-4 font-['Poppins'] text-center py-8 relative z-10"
                   key={item.id}
                 >
-                  <h1 className="font-bold text-xl lg:text-[32px] w-[136px]">
+                  <h1 className="font-bold font-['Montserrat'] text-xl lg:text-[32px] w-[136px]">
                     {item.price}
                   </h1>
                   <div className="flex flex-col w-[135px] lg:w-full">

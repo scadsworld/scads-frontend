@@ -16,7 +16,7 @@ const ThemeToggler = ({ value }) => {
         h-8
         rounded-full 
         p-1 
-        ${theme ? "bg-[#DBDBDB]" : "bg-[#0D0D0D]"}
+        ${theme ? "bg-[#E2E6E9]" : "bg-[#0D0D0D]"}
         relative 
         transition-colors 
         duration-500 

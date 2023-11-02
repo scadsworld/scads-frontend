@@ -1,24 +1,29 @@
 import Card from "../../UI/Card";
+import { motion } from "framer-motion";
+import TWINE_img from "../../../assets/lavish_img.svg";
 
-import lavish_img from "../../../assets/lavish_img.svg";
-import tooltip from "../../../assets/tooltip.svg";
-
-const Lavish = ({ value }) => {
+const TWINE = ({ value }) => {
   const { theme } = value;
 
   return (
-    <div className="container mx-auto justify-center gap-16 hidden lg:flex">
+    <motion.div
+      className="container mx-auto justify-center gap-16 hidden lg:flex"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="relative">
         <Card
-          className={`flex flex-col items-center font-['Lato'] py-5 mt-3 lg:h-[485px] ${
+          className={`flex flex-col items-center font-['Poppins'] py-5 mt-3 lg:h-[420px] lg:w-full xl:h-[485px] ${
             theme ? "text-white" : "text-black"
           }`}
           theme={theme}
         >
           {" "}
-          <h1 className="text-lg text-center">Claim Earned LAVISH</h1>
+          <h1 className="text-lg text-center">Claim Earned TWINE</h1>
           <div
-            className={`flex items-center gap-2 mt-8 ${
+            className={`flex items-center gap-2 mt-8 lg:mt-4 xl:mt-8 ${
               theme ? "text-white" : "text-black"
             }`}
           >
@@ -34,12 +39,7 @@ const Lavish = ({ value }) => {
               <span>3%</span>
               <span>3%</span>
             </div>
-            <div className="flex flex-col justify-center gap-3">
-              <img src={tooltip} alt="" />
-              <img src={tooltip} alt="" />
-              <img src={tooltip} alt="" />
-            </div>
-            <img src={lavish_img} className="ms-14" alt="" />
+            <img src={TWINE_img} className="ms-14" alt="" />
           </div>
           <span className="mt-5 text-sm">SCADS Owned: 0 Scads</span>
           <div className="flex flex-col items-center gap-1 mt-7">
@@ -48,39 +48,35 @@ const Lavish = ({ value }) => {
           </div>
           <div className="flex justify-center gap-16 mt-7">
             <div className="flex flex-col gap-1">
-              <p className="text-sm">LAVISH Claimed:</p>
-              <p className="text-sm">LAVISH Rewarded:</p>
+              <p className="text-sm">TWINE Claimed:</p>
+              <p className="text-sm">TWINE Rewarded:</p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-sm">0 LAVISH</p>
-              <p className="text-sm">0 LAVISH</p>
+              <p className="text-sm">0 TWINE</p>
+              <p className="text-sm">0 TWINE</p>
             </div>
           </div>
           <div className="mt-5">
             <button
               className={`border-b-2 ${
                 theme ? "border-white" : "border-black"
-              } font-['Montserrat'] text-xl`}
+              } font-['Poppins'] text-xl`}
             >
               Connect Wallet
             </button>
           </div>
-          <span className="mt-5 opacity-75 lg:max-w-[223px] text-center text-xs">
-            Customers can only claim a WHOLE LAVISH token. Partial withdrawals
-            are not supported
-          </span>
         </Card>
       </div>
       <div className="relative">
         <Card
-          className={`flex flex-col items-center font-['Lato'] py-5 mt-3 lg:h-[485px] text-[#B6B6B6] ${
+          className={`flex flex-col items-center font-['Poppins'] py-5 mt-3 lg:h-[420px] lg:w-full xl:h-[485px] text-[#B6B6B6] ${
             theme ? "text-white" : "text-black"
           }`}
           theme={theme}
         >
-          <h1 className="text-lg text-center">Buy SCADS with LAVISH</h1>
+          <h1 className="text-lg text-center">Buy SCADS with TWINE</h1>
           <div
-            className={`flex items-center gap-2 mt-8 ${
+            className={`flex items-center gap-2 mt-8 lg:mt-4 xl:mt-8 ${
               theme ? "text-white" : "text-black"
             }`}
           >
@@ -96,12 +92,16 @@ const Lavish = ({ value }) => {
               <span>3%</span>
               <span>3%</span>
             </div>
-            <img src={lavish_img} className="ms-14" alt="" />
+            <img src={TWINE_img} className="ms-14" alt="" />
           </div>
-          <div className={`mb-7 mt-16 ${theme ? "text-white" : "text-black"}`}>
+          <div
+            className={`mb-7 mt-16 lg:mt-8 xl:mt-16 ${
+              theme ? "text-white" : "text-black"
+            }`}
+          >
             <div className="flex flex-col gap-[2px]">
               <label htmlFor="crypto_token" className="text-sm">
-                LAVISH
+                TWINE
               </label>
               <input
                 type="text"
@@ -127,14 +127,14 @@ const Lavish = ({ value }) => {
           <button
             className={`border-b-2 ${
               theme ? "text-white border-white" : "text-black border-black"
-            } font-['Montserrat'] text-xl`}
+            } font-['Poppins'] text-xl`}
           >
             Connect Wallet
           </button>
         </Card>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-export default Lavish;
+export default TWINE;
