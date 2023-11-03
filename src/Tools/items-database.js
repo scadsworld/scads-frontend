@@ -159,7 +159,7 @@ export const wallets = [
     id: "w2",
     title: "TWINE",
     description:
-      "TWINE is a speculative token, which also functions as a linear TRUST token, providing constant price ",
+      "TWINE is a speculative token, which also functions as a linear token, providing constant price ",
   },
   {
     id: "w3",
@@ -268,7 +268,7 @@ export const tokenomics = [
   },
   {
     id: 11,
-    text: `SCADS introduces an innovative concept called Proof of Hold (POH) to ensure safety, security, and minimize investment risks. This approach involves users simply purchasing the stable coin and holding it. By doing so, they automatically mint TWINE, the linear trust token. To facilitate this process, the algorithm incorporates a mapping feature called "isHolder" to monitor addresses that qualify as holders. The "ProofOfHolding" function enables an address to include itself in this list, allowing for seamless participation in the Proof of Hold mechanism. This inventive approach provides a secure and risk-reduced investment experience for users.`,
+    text: `SCADS introduces an innovative concept called Proof of Hold (POH) to ensure safety, security, and minimize investment risks. This approach involves users simply purchasing the stable coin and holding it. By doing so, they automatically mint TWINE, the linear token. To facilitate this process, the algorithm incorporates a mapping feature called "isHolder" to monitor addresses that qualify as holders. The "ProofOfHolding" function enables an address to include itself in this list, allowing for seamless participation in the Proof of Hold mechanism. This inventive approach provides a secure and risk-reduced investment experience for users.`,
     thumb: "Proof of Hold (POH)",
   },
 ];

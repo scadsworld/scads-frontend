@@ -21,10 +21,10 @@ const Predictability = ({ value }) => {
         variants={textOpacity}
         className="flex flex-col justify-center items-center"
       >
-        <h1 className="font-['Poppins'] font-bold text-2xl text-center lg:text-[40px] max-w-[340px] md:max-w-[640px] leading-normal md:leading-tight">
+        <h1 className="font-['Poppins'] font-bold text-2xl text-center lg:text-[40px] max-w-[340px] md:max-w-[888px] leading-normal md:leading-tight">
           {predictabilityText.title}
         </h1>
-        <p className="font-['Poppins'] text-base lg:text-lg mt-[51px] max-w-[328px] md:max-w-[600px] lg:max-w-[1000px] flex flex-col gap-1">
+        <p className="font-['Poppins'] text-base lg:text-base mt-[51px] max-w-[328px] md:max-w-[600px] lg:max-w-[822px] flex flex-col gap-1">
           <span>{predictabilityText.text_1}</span> <br />
           <span>{predictabilityText.text_2}</span> <br />
           <span>{predictabilityText.text_3}</span> <br />

@@ -37,7 +37,7 @@ const Treasury = ({ value }) => {
             >
               <Card theme={theme}>
                 <div className="flex flex-col items-center justify-center xl:justify-end py-5 lg:py-6 w-[265px] md:w-[170px] lg:w-[160px] xl:w-[210px] 2xl:w-[240px] md:h-full md:mt-0">
-                  <span className="text-[#353688] text-2xl text-medium">
+                  <span className="text-[#353688] text-2xl font-semibold">
                     {item.name}
                   </span>{" "}
                   <span className="text-base md:text-lg text-[#424242]">
