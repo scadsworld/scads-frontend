@@ -16,11 +16,11 @@ const Header = ({ value }) => {
 
   return (
     <div
-      className={`bg-[url('../src/assets/mobile_header.webp')] bg-fixed bg-no-repeat md:bg-none ${
+      className={`bg-[url('../src/assets/mobile_header.webp')] bg-fixed bg-no-repeat md:bg-cover lg:bg-none ${
         theme === false && "md:bg-[#DBDBDB]"
       } `}
     >
-      <div className="container mx-auto flex justify-start font-['Poppins'] pb-20 pt-32 2xl:h-screen lg:pb-0 relative overflow-hidden">
+      <div className="container mx-auto flex justify-center lg:justify-start font-['Poppins'] pb-20 pt-32 2xl:h-screen lg:pb-0 relative overflow-hidden">
         <div
           className={`flex flex-col justify-center items-center lg:items-start text-center lg:text-start gap-8 2xl:gap-10 lg:py-20 xl:mx-20 z-10 ${
             theme ? "text-[#B6B6B6]" : "text-black"

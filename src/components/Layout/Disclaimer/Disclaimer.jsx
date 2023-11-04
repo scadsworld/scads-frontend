@@ -17,7 +17,7 @@ const Disclaimer = ({ value }) => {
       }`}
     >
       <h1 className="text-2xl">Disclaimer</h1>
-      <p className="text-sm max-w-[333px] lg:max-w-[1000px]">
+      <p className="text-sm max-w-[333px] md:max-w-[620px] lg:max-w-[1000px]">
         While the SCADS algorithm guarantees the stability of SCADS as a stable
         coin and assures that TWINE is a linear token with a constant growth
         rate for each minted TWINE, it is important to note that SCADS cannot be

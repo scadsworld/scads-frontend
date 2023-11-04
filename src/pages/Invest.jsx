@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Scads from "../components/Layout/InvestCards/Scads";
 import TWINE from "../components/Layout/InvestCards/Lavish";
 
-import { investPageVariants } from "../Tools/variants";
+import { investPageVariants, opacityVariants } from "../Tools/variants";
 import cross_dark from "../assets/cross_dark.svg";
 import cross_light from "../assets/cross_light.svg";
 import Card from "../components/UI/Card";
@@ -37,6 +37,9 @@ const Invest = ({ value }) => {
     }
   }, [onScreen]);
 
+  const closeCard = () => {
+    setOnScreen(false);
+  };
   return (
     <AnimatePresence mode="wait">
       {onScreen && (
@@ -46,21 +49,29 @@ const Invest = ({ value }) => {
           exit="offscreen"
           transition={{ duration: 0.3 }}
           variants={toggle}
-          className={`lg:overflow-hidden lg:h-[80vh] lg:w-screen hidden lg:flex justify-center lg:top-24 lg:left-0 lg:z-50 relative lg:fixed`}
+          className={`lg:overflow-hidden lg:w-screen hidden lg:flex justify-center lg:top-24 z-50 relative lg:fixed`}
         >
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+            variants={opacityVariants}
+          >
+            <div
+              className="absolute h-screen w-full bg-transparent left-0"
+              onClick={closeCard}
+            ></div>
+          </motion.div>
           <Card
             theme={theme}
-            className="overflow-x-hidden lg:w-10/12 lg:backdrop-blur-md"
+            className="overflow-x-hidden lg:h-[80vh] lg:w-10/12 lg:backdrop-blur-md relative"
           >
             <div
               className={`container mx-auto flex flex-col justify-center items-center h-full font-['Poppins'] relative z-10 ${
                 theme ? "text-white" : "text-black"
               }`}
             >
-              <button
-                className="absolute right-0 top-10"
-                onClick={() => setOnScreen(false)}
-              >
+              <button className="absolute right-0 top-10" onClick={closeCard}>
                 <img
                   src={theme ? cross_light : cross_dark}
                   className="max-w-[50px]"

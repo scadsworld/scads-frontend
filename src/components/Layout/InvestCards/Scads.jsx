@@ -1,6 +1,6 @@
 import Card from "../../UI/Card";
 import { motion } from "framer-motion";
-import scads_img from "../../../assets/scads-img.svg";
+import scads_img from "../../../assets/scads_img.svg";
 import arrow from "../../../assets/accrodion_arrow.svg";
 import { useState } from "react";
 import DropdownModal from "../../UI/DropdownModal";
@@ -53,7 +53,7 @@ const Scads = ({ value }) => {
             <span>3%</span>
             <span>3%</span>
           </div>
-          <img src={scads_img} className="ms-14" alt="" />
+          <img src={scads_img} className="ms-14" width={30} alt="" />
         </div>
         <div
           className={`my-7 lg:my-4 xl:my-7 ${
