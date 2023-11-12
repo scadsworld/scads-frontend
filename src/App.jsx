@@ -8,6 +8,7 @@ import Invest from "./pages/Invest";
 import InvestMobile from "./pages/InvestMobile";
 import News from "./pages/News";
 import { useLocation } from "react-router-dom";
+import HowTo from "./pages/HowTo";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -38,6 +39,7 @@ function App() {
           <Route path="/" element={<Home value={{ theme, setOnScreen }} />} />
           <Route path="/invest" element={<InvestMobile value={{ theme }} />} />
           <Route path="/news" element={<News value={{ theme }} />} />
+          <Route path="/howto" element={<HowTo value={{ theme }} />} />
           <Route path="*" element={<Home value={{ theme, setOnScreen }} />} />
         </Routes>
       </AnimatePresence>

@@ -12,6 +12,13 @@ import busd from "../assets/busd 1.svg";
 import eth from "../assets/eth 1.svg";
 import twine from "../assets/lavish_img 1.svg";
 import usd from "../assets/usd 1.svg";
+import step_1 from "../assets/step_1.webp";
+import step_2 from "../assets/step_2.webp";
+import step_2_1 from "../assets/step_2.1.webp";
+import step_3 from "../assets/step_3.webp";
+import step_4 from "../assets/step_4.webp";
+import step_7 from "../assets/step_7.webp";
+import step_8 from "../assets/step_8.webp";
 
 export const navLinks = [
   {
@@ -329,4 +336,74 @@ export const dropdownTokens = [
   { id: "twine", name: "TWINE", icon: twine },
   { id: "usdt", name: "USDT", icon: usd },
   { id: "usdc", name: "USDC", icon: usd },
+];
+
+export const howToItems = [
+  {
+    id: "Step 1",
+    text: "Ensure you have added a Web3 wallet to your phone or tablet, and the wallet browser extension for your PC or Mac.",
+    img: step_1,
+    duration: 0.5,
+  },
+  {
+    id: "Step 2",
+    text: "Connect your wallet to the scads.io site.",
+    img: step_2,
+    img_two: step_2_1,
+    duration: 0.7,
+  },
+  {
+    id: "Step 3",
+    text: "Add BNB to your wallet balance to cover gas fees on the network.",
+    img: step_3,
+    duration: 0.9,
+  },
+  {
+    id: "Step 4",
+    text: "If you're using MetaMask, manually add the BSC network. Other wallets usually pick up the network automatically.",
+    link: "https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain",
+    img: step_4,
+    duration: 0.5,
+  },
+  {
+    id: "Step 5",
+    text: "Add the SCADS and TWINE token address to your wallet.",
+    text_sm: `USDT: 0x55d398326f99059ff775485246999027b3197955
+    USDC: 0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d
+    Scads: 0x5766D5EcCb424E818a4b744C65D26ECC0dE6A8DD
+    Twine: 0x649CDf5059A305d549342c7B1D91a5cC6EEB2e75`,
+    duration: 0.7,
+  },
+  {
+    id: "Step 6",
+    text: "Deposit funds into your wallet, mainly stable coins like USDC or USDT, to be able to mint SCADS.",
+    duration: 0.9,
+  },
+  {
+    id: "Step 7",
+    text: "Choose the stable coin available in your wallet (USDT or USDC), enter the amount, and enable it for the first time. Once enabled, you can start minting SCADS.",
+    img: step_7,
+    duration: 0.5,
+  },
+  {
+    id: "Step 8",
+    text: "Once you've minted SCADS, you'll see the total amount in your wallet.",
+    img: step_8,
+    duration: 0.7,
+  },
+  {
+    id: "Step 9",
+    text: "Depending on the holding period, your wallet will automatically mint TWINE. The balance is displayed on the site when you log in and in your wallet on your tablet or phone.",
+    duration: 0.9,
+  },
+  {
+    id: "Step 10",
+    text: "Claim your minted TWINE. You can hold or buy more SCADS to mint more.",
+    duration: 0.5,
+  },
+  {
+    id: "Step 11",
+    text: "Optionally, you can enable auto-compound, where the system daily claims your TWINE and converts it to SCADS for you.",
+    duration: 0.7,
+  },
 ];

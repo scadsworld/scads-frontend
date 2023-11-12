@@ -27,7 +27,7 @@ const Navbar = ({ value }) => {
       {/* DESKTOP NAVBAR */}
       <div className="container mx-auto flex justify-center">
         <Card
-          className={`hidden lg:flex justify-between rounded-2xl mt-6 items-center fixed top-0 z-20 font-['Poppins'] w-10/12 px-28 transition-all duration-300 backdrop-blur-lg ${textClass} ${bgClass}`}
+          className={`hidden lg:flex justify-between rounded-2xl mt-6 items-center fixed top-0 z-20 font-['Poppins'] w-11/12 px-28 transition-all duration-300 backdrop-blur-lg ${textClass} ${bgClass}`}
           theme={theme}
         >
           <Link to="/">
@@ -39,15 +39,6 @@ const Navbar = ({ value }) => {
           </Link>
           <div className="flex items-center gap-9">
             <ul className="list-none flex gap-[30px]">
-              <li>
-                <Link
-                  to="/"
-                  className="text-lg lg:text-base font-medium hover:text-[#7768E5] transition-all duration-200"
-                  onClick={() => setOnScreen(false)}
-                >
-                  Home
-                </Link>
-              </li>
               <li>
                 <Link
                   to="/news"
@@ -65,11 +56,18 @@ const Navbar = ({ value }) => {
                   Invest
                 </button>
               </li>
+              <li>
+                <Link
+                  to="/howto"
+                  className="text-lg lg:text-base font-medium hover:text-[#7768E5] transition-all duration-200"
+                  onClick={() => setOnScreen(false)}
+                >
+                  How To
+                </Link>
+              </li>
             </ul>
             <ThemeToggler value={value} />
-            <button className="underline underline-offset-8 font-bold text-[20px]">
-              Connect Wallet
-            </button>
+            <button className="font-bold text-[20px]">Connect Wallet</button>
           </div>
         </Card>
       </div>
