@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import logo_light from "../../assets/logo_light.svg";
@@ -7,6 +7,7 @@ import { navLinks } from "../../Tools/items-database";
 import ThemeToggler from "../UI/ThemeToggler";
 import Hamburger from "../UI/Hamburger";
 import Card from "../UI/Card";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = ({ value }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +16,14 @@ const Navbar = ({ value }) => {
 
   let textClass = "text-[#B6B6B6]";
   let bgClass = "";
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-y-hidden");
+    } else {
+      document.body.classList.remove("overflow-y-hidden");
+    }
+  }, [isOpen]);
 
   if (theme) {
     textClass = "text-[#B6B6B6]";
@@ -27,7 +36,7 @@ const Navbar = ({ value }) => {
       {/* DESKTOP NAVBAR */}
       <div className="container mx-auto flex justify-center">
         <Card
-          className={`hidden lg:flex justify-between rounded-2xl mt-6 items-center fixed top-0 z-20 font-['Poppins'] w-11/12 px-28 transition-all duration-300 backdrop-blur-lg ${textClass} ${bgClass}`}
+          className={`hidden lg:flex justify-between rounded-2xl mt-6 items-center fixed top-0 z-20 font-['Poppins'] w-10/12 py-3 px-28 transition-all duration-300 backdrop-blur-lg ${textClass} ${bgClass}`}
           theme={theme}
         >
           <Link to="/">
@@ -42,7 +51,7 @@ const Navbar = ({ value }) => {
               <li>
                 <Link
                   to="/news"
-                  className="text-lg lg:text-base font-medium hover:text-[#7768E5] transition-all duration-200"
+                  className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
                   onClick={() => setOnScreen(false)}
                 >
                   News
@@ -51,7 +60,7 @@ const Navbar = ({ value }) => {
               <li>
                 <button
                   onClick={() => setOnScreen(!onScreen)}
-                  className="text-lg lg:text-base font-medium hover:text-[#7768E5] transition-all duration-200"
+                  className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
                 >
                   Invest
                 </button>
@@ -59,10 +68,19 @@ const Navbar = ({ value }) => {
               <li>
                 <Link
                   to="/howto"
-                  className="text-lg lg:text-base font-medium hover:text-[#7768E5] transition-all duration-200"
+                  className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
                   onClick={() => setOnScreen(false)}
                 >
                   How To
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/roadmap"
+                  className="text-lg lg:text-base font-medium hover:text-[#B52761] transition-all duration-200"
+                  onClick={() => setOnScreen(false)}
+                >
+                  Roadmap
                 </Link>
               </li>
             </ul>
@@ -73,9 +91,9 @@ const Navbar = ({ value }) => {
       </div>
 
       {/* MOBILE NAVBAR */}
-      <div className="container mx-auto flex justify-center">
+      <div className="container mx-auto flex flex-col items-center justify-center fixed top-0 left-1/2 -translate-x-1/2 z-50">
         <Card
-          className={`flex justify-between w-11/12 items-center font-['Poppins'] lg:hidden px-2 fixed top-0 z-50 mt-2 ${
+          className={`flex justify-between w-11/12 items-center font-['Montserrat'] lg:hidden px-2 py-3 mt-2 ${
             theme && "bg-[#191919]"
           } ${theme === false && "bg-[#E2E6E9]"}`}
           theme={theme}
@@ -91,41 +109,65 @@ const Navbar = ({ value }) => {
           </h3>
           <Hamburger value={{ theme, setIsOpen, isOpen }} />
         </Card>
-        <div
-          className={`${
-            isOpen
-              ? "left-0 h-screen w-screen"
-              : "left-[-1000px] h-screen w-screen"
-          } 
-        ${theme ? "bg-[#191919]" : "bg-[#E2E6E9]"}
-        transition-all duration-700 fixed z-20 lg:hidden`}
-        >
-          <div
-            className={`flex flex-col items-center justify-center h-full gap-16 ${
-              theme ? "text-[#B6B6B6]" : "text-black"
-            }`}
-          >
-            <ThemeToggler value={value} setIsOpen={setIsOpen} />
-            <ul className="list-none uppercase gap-16 flex flex-col items-center justify-center">
-              {navLinks.map((item) => (
-                <li key={item.id}>
-                  <Link
-                    to={item.path}
-                    className="text-xl font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div>
-              <button className="underline underline-offset-8 font-bold text-[20px]">
-                Connect Wallet
-              </button>
-            </div>
-          </div>
-        </div>
+        <AnimatePresence mode="wait">
+          {isOpen && (
+            <motion.div
+              initial={{
+                height: 0,
+                overflow: "hidden",
+              }}
+              animate={{
+                height: "auto",
+              }}
+              exit={{
+                height: 0,
+                overflow: "hidden",
+              }}
+              transition={{ duration: 0.3 }}
+              className="w-11/12 py-6"
+            >
+              <motion.div
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{
+                  opacity: 0,
+                }}
+                transition={{ duration: 0.1 }}
+              >
+                <Card
+                  theme={theme}
+                  className={`flex flex-col items-center justify-center w-full gap-10 py-10 backdrop-blur-[96px] ${
+                    theme ? "text-[#B6B6B6]" : "text-black"
+                  }`}
+                >
+                  <ThemeToggler value={value} setIsOpen={setIsOpen} />
+                  <ul className="list-none uppercase flex flex-col items-center justify-center gap-10">
+                    {navLinks.map((item) => (
+                      <li key={item.id}>
+                        <Link
+                          to={item.path}
+                          className="text-lg font-medium"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.text}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <div>
+                    <button className="font-bold text-[20px]">
+                      Connect Wallet
+                    </button>
+                  </div>
+                </Card>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </>
   );

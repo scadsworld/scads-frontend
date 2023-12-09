@@ -20,7 +20,7 @@ code {
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 /* Track */
@@ -32,9 +32,22 @@ code {
 ::-webkit-scrollbar-thumb {
   background: rgb(156, 163, 175);
   transition: 0.5s;
+  border-radius: 30px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.roadmap-list:nth-child(even) .roadmap-dot {
+  right: 0;
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }

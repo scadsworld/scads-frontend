@@ -19,6 +19,14 @@ import step_3 from "../assets/step_3.webp";
 import step_4 from "../assets/step_4.webp";
 import step_7 from "../assets/step_7.webp";
 import step_8 from "../assets/step_8.webp";
+import fiat from "../assets/fiat.webp";
+import dollar from "../assets/dollar.webp";
+import bitcoin from "../assets/bitcoin.webp";
+import family from "../assets/family.webp";
+import school from "../assets/school.webp";
+import old_people from "../assets/old people.webp";
+import second_family from "../assets/polygomous_family.webp";
+import sad_man from "../assets/sad_man.webp";
 
 export const navLinks = [
   {
@@ -36,45 +44,65 @@ export const navLinks = [
     text: "Invest",
     path: "/invest",
   },
+  {
+    id: "n3",
+    text: "Roadmap",
+    path: "/roadmap",
+  },
+  {
+    id: "n4",
+    text: "How to",
+    path: "/howto",
+  },
 ];
 
 export const headerText = {
-  title: `The right to own your own money`,
-  subTitle:
-    "The Future of Stablecoins, the First PROOF OF HOLD (POH) Non Dollar Based",
-  slogan: "It Is Inevitable Decentralized & Dependable",
-  text: "Over the past four years, DeFi has seen explosive growth, now at a market cap of 48 billion USD. However, fraudulent projects have caused significant investor losses. SCADS offers a unique solution.",
+  title: `Save and grow your capital with money you own`,
+  subTitle: "Protect your assets, hold your SCADS and mint TWINE!",
+  slogan: "World first non fiat based stable coin based on Proof of hold.",
+  text: [
+    "Truly decentralized, non-governed money created for you.",
+    "The only asset that brings stability and confidence, can’t be hacked or dumped.",
+    "Mint TWINE that grows in time.",
+    "Brings stability and confidence to Crypto holders, traders, investors and institutional organizations.",
+  ],
 };
 
-// LIVE PRICES CONTENT
-export const prices = [
+// LIVE STATS CONTENT
+export const stats = [
   {
-    id: "locked",
-    price: "$1400.0",
-    keyphrase_one: "Reserve",
-    keyphrase_two: "Locked",
+    id: "mint",
+    price: "0.0000006",
+    keyphrase_one: "Adaptive Minting",
+    keyphrase_two: "Speed",
+  },
+  {
+    id: "funds",
+    price: "17000",
+    keyphrase_one: "Funds",
+    keyphrase_two: "Pulse",
   },
   {
     id: "pulse",
-    price: "$0.01",
+    price: "24:00",
     keyphrase_one: "Next",
     keyphrase_two: "Pulse",
   },
   {
-    id: "market",
-    price: "10118.44",
-    keyphrase_one: "Total TWINE In The",
-    keyphrase_two: "Market",
+    id: "supply",
+    price: "1650000",
+    keyphrase_one: "Minted Supply",
+    keyphrase_two: "Twine",
   },
   {
     id: "increase",
-    price: "$0.25",
+    price: "0.17",
     keyphrase_one: "TWINE Price",
     keyphrase_two: "Increase",
   },
   {
-    id: "Help",
-    price: "$1000.25",
+    id: "held",
+    price: "1000.25",
     keyphrase_one: "Total SCADS",
     keyphrase_two: "Held",
   },
@@ -96,27 +124,33 @@ export const predictabilityText = {
 export const treasuryCards = [
   {
     id: "c1",
-    amount: "98000",
-    name: "SCADS",
+    amount: "$98000",
+    name: "Total",
     duration: 0.5,
   },
   {
     id: "c2",
     amount: "100006",
-    name: "TWINE",
+    name: "SCADS",
     duration: 0.7,
   },
   {
     id: "c3",
     amount: "0",
-    name: "USDT",
+    name: "TWINE",
     duration: 0.9,
   },
   {
     id: "c4",
-    amount: "0",
-    name: "USDC",
+    amount: "$0",
+    name: "USDT",
     duration: 1.1,
+  },
+  {
+    id: "c5",
+    amount: "$0",
+    name: "USDC",
+    duration: 1.3,
   },
 ];
 
@@ -160,37 +194,36 @@ export const wallets = [
     id: "w1",
     title: "SCADS",
     description:
-      "Algorithmic stable coin, with point of reference to the USD (as the easiest popular denomination.) Not pegged.",
+      "Decentralized, stable digital currency for secure global transactions, not pegged based on (POH).",
   },
   {
     id: "w2",
     title: "TWINE",
     description:
-      "TWINE is a speculative token, which also functions as a linear token, providing constant price ",
+      "Linearly growing digital asset for minted by holding SCADS long-term, secured and trusted investment.",
   },
   {
     id: "w3",
-    title: "PULSE",
-    description:
-      "Is a smart contract that performs daily operations within the algorithm It buys (SCADS), ",
+    title: "SEIGNORAGE",
+    description: "The system self cost of minting.",
   },
   {
     id: "w4",
-    title: "SEIGNORAGE",
+    title: "PULSE",
     description:
-      "There is no system that can run without running cost. Witch entails decentralized anonymous servers.",
+      "Self-sustained investment protocol & network effect within SCADS ecosystem.",
   },
+
   {
     id: "w5",
-    title: "RESERVE",
-    description:
-      "RESERVE wallet  is different from all past reserve  concepts, can hold and lock SCADS and TWINE",
+    title: "TREASURY",
+    description: "Financial backbone of SCADS, managing assets and liquidity.",
   },
   {
     id: "w6",
-    title: "TREASURY",
+    title: "LIQUIDITY WALLET",
     description:
-      "The wallet manages  all assets  circulation within the  algorithm, including  minting of new SCADS, ",
+      "Is a depository to supply liquidity to the market as makers and liquidity providers.",
   },
 ];
 
@@ -202,7 +235,7 @@ export const tokenomicsHeaderText = {
 export const tokenomics = [
   {
     id: 0,
-    text: "SCADS is an algorithmic stablecoin, its value referencing the USD for ease of use. It's important to note that SCADS is not pegged to the USD. It can only be minted when backed by collateral, specifically through the exchange of stablecoins for SCADS. This system operates independently, is characterized by fairness, and operates in a permissionless and fully decentralized manner. It continuously evolves within an automated, self-sustaining environment. Crucially, SCADS cannot be subject to seizure or freezing, as each user holds it in their own wallet. This ensures complete and genuine decentralized freedom and independence. It's worth emphasizing that SCADS has no owners who could be compelled to jeopardize users funds.",
+    text: "SCADS is a stablecoin, its value referencing the USD for ease of use. It's important to note that SCADS is not pegged to the USD. It can only be minted when backed by collateral, specifically through the exchange of stablecoins for SCADS. This system operates independently, is characterized by fairness, and operates in a permissionless and fully decentralized manner. It continuously evolves within an automated, self-sustaining environment. Crucially, SCADS cannot be subject to seizure or freezing, as each user holds it in their own wallet. This ensures complete and genuine decentralized freedom and independence. It's worth emphasizing that SCADS has no owners who could be compelled to jeopardize users funds.",
     thumb: "SCADS",
   },
   {
@@ -233,17 +266,33 @@ export const tokenomics = [
   },
   {
     id: 4,
-    text: "Is a smart contract that performs daily operations within the algorithm It buys (SCADS), mint (TWINE), and sells (TWINE) to (SCADS). It generates profits for the system and allocates them as follows: 80% goes back as a sinking fund increasing  its investment in the system, and 20% goes to the reserve locked (for life wallet) in (SCADS) currency, which strengthens the collateralization of (SACDS). While creating  a network effect due transacting  constantly. The self-sustaining network effect is  a first  that pioneers the algorithm  on another layer.",
+    text: "Is a smart contract that performs daily operations within the algorithm It buys (SCADS), mint (TWINE), and sells (TWINE) to (SCADS). It generates profits for the system and allocates them as follows: 80% goes back as a sinking fund increasing its investment in the system, and 20% goes to the LQUIDITY wallet  in (SCADS) currency, which strengthens the collateralization of (SACDS). While creating a network effect due to transacting constantly. The self-sustaining network effect is a first that pioneers the algorithm on another layer.",
     thumb: "PULSE",
   },
   {
     id: 5,
-    text: "In contrast to conventional reserve systems employed by banks and exchanges, which often involve collateral comprised of various assets, bonds, and crypto holdings, all susceptible to market volatility and devaluation, and subject to third-party audits every six months, the SCADS reserve operates on an entirely different principle. The SCADS reserve exclusively relies on stable collateral within SCADS itself. This collateralization process leads to the creation of a guaranteed linear growth token in the form of TWINE. This approach ensures a secure and controlled expansion of liquidity within the reserve wallet. Moreover, it is designed with the assurance that deficits should never occur, as users maintain direct control over their own funds within their respective wallets.",
-    thumb: "RESERVE",
+    text: "The wallet functions as a repository for surplus liquidity within the algorithm. This excess liquidity is strategically invested as a liquidity provider and market maker within the cryptocurrency industry. All assets within the wallet are denominated in SCADS and TWINE and are allocated exclusively as investments in SCADS. The algorithm oversees and manages the wallet, ensuring that liquidity is supplied based on predefined criteria, contributing to the stability and functionality of the SCADS ecosystem.",
+    thumb: "LIQUIDITY WALLET",
   },
   {
     id: 6,
-    text: "The Treasury wallet oversees all asset circulation within the algorithm. This encompasses tasks such as minting new SCADS, holding stablecoins for users who wish to withdraw, and minting TWINE tokens to enhance liquidity value within the Treasury. Essentially, it plays a central role in managing the financial operations of the algorithm, ensuring its smooth operation and stability.",
+    text: `Security at the Core: PROOF OF RESERVE and PROOF OF COLLATERAL in SCADS Reserve and Collateral Crucial in SCADS:
+Integral Components: SCADS places utmost importance on the concept of reserve and collateral, considering them integral components of its operational framework.
+    These elements are securely held in the treasury and users' wallets, forming the backbone of SCADS's financial robustness.
+    Contracts for PROOF OF RESERVE and PROOF OF COLLATERAL:
+    Proactive Measures:
+    Despite having reserves and collateral securely held, SCADS reinforces its commitment to transparency through specific contracts.
+    Contracts for PROOF OF RESERVE and PROOF OF COLLATERAL are established, providing clear verification mechanisms for the community.
+    Mandatory Collateral for SCADS Minting:
+    Risk Mitigation:
+    SCADS takes a stringent approach to minting, requiring collateral for every SCADS minted.
+    This ensures a risk-averse model, preventing the scenario where SCADS would exist without the necessary backing.
+    Interconnected System:
+    Collateralization Linkages:
+    Logically intertwined, the SCADS ecosystem establishes a strong link between SCADS minting, collateral, and the subsequent minting of TWINE.
+    This collateralized system contrasts with other stablecoins, such as USDT or USDC, providing a more tangible and secure financial foundation.
+    Collateralized Assurance:
+    SCADS, through the implementation of PROOF OF RESERVE and PROOF OF COLLATERAL contracts, reinforces its commitment to a robust and transparent financial model. By ensuring that every SCADS is minted with collateral, and subsequently linking the minting of TWINE to SCADS, SCADS establishes a genuinely collateralized system, setting it apart from other stablecoins in the digital financial landscape.`,
     thumb: "TREASURY",
   },
   {
@@ -405,5 +454,242 @@ export const howToItems = [
     id: "Step 11",
     text: "Optionally, you can enable auto-compound, where the system daily claims your TWINE and converts it to SCADS for you.",
     duration: 0.7,
+  },
+];
+
+export const statTooltip = [
+  {
+    id: "t1",
+    title: "Current Minting Speed",
+    text: "the current adaptive speed is based on mint orders for SCADS to protect from attacks, and to make sure the minting last 15 years.",
+  },
+  {
+    id: "t2",
+    title: "PULSE funds",
+    text: "here you can find the capital and growth of PULSE.",
+  },
+  {
+    id: "t3",
+    title: "Next PULSE",
+    text: "timer for when is the next pulse.",
+  },
+  {
+    id: "t4",
+    title: "Total TWINE Minted",
+    text: "the total of already minted TWINE in the whole market.",
+  },
+  {
+    id: "t5",
+    title: "TWINE price",
+    text: "the price growth based on the number of TWINE minted.",
+  },
+  {
+    id: "t6",
+    title: "Total SCADS",
+    text: "total of scads in all wallets and inside the system.",
+  },
+];
+
+export const roadmapContent = [
+  {
+    id: "r1",
+    date: "April 2019",
+    l1: "Research initiation.",
+    right: false,
+  },
+  {
+    id: "r2",
+    date: "3 Months",
+    l1: "Project Planning.",
+    l2: "Risk Assessment and Management.",
+    l3: "Project Team Formation.",
+    right: true,
+  },
+  {
+    id: "r3",
+    date: "July 2019",
+    l1: "Development process commences.",
+    right: false,
+  },
+  {
+    id: "r4",
+    date: "11 Months",
+    l1: "Start building anticipation.",
+    l2: "Gather reviews from beta testers.",
+    right: true,
+  },
+  {
+    id: "r5",
+    date: "March 2021",
+    l1: "Base algorithm completed.",
+    right: false,
+  },
+  {
+    id: "r6",
+    date: "2 Weeks",
+    l1: "Scads contract implemented.",
+    right: true,
+  },
+  {
+    id: "r7",
+    date: "2 Weeks",
+    l1: "Lavish contract implemented.",
+    right: false,
+  },
+  {
+    id: "r8",
+    date: "January 2022",
+    l1: "Pulse contract implemented.",
+    right: true,
+  },
+  {
+    id: "r9",
+    date: "April 2022",
+    l1: "Reserve contract implemented.",
+    right: false,
+  },
+  {
+    id: "r10",
+    date: "May 2022",
+    l1: "Seignorage contract implemented.",
+    l2: "Treasury contract implemented.",
+    right: true,
+  },
+  {
+    id: "r11",
+    date: "2 Months",
+    l1: "Proof of Holding protocol completed.",
+    right: false,
+  },
+  {
+    id: "r12",
+    date: "August 2022",
+    l1: "Modifications to all smart contracts are implemented in response to alterations in regulatory requirements.",
+    right: true,
+  },
+  {
+    id: "r13",
+    date: "3 Months",
+    l1: "Securing smart contracts.",
+    right: false,
+  },
+  {
+    id: "r14",
+    date: "December 2022",
+    l1: " Adaptive minting speed completed.",
+    right: true,
+  },
+  {
+    id: "r15",
+    date: "3 Weeks",
+    l1: "v2 modifications to all smart contracts are implemented in response to alterations in regulatory requirements.",
+    right: false,
+  },
+  {
+    id: "r16",
+    date: "April 2023",
+    l1: "Proof of Concept release on testnet.",
+    right: true,
+  },
+  {
+    id: "r17",
+    date: "September 2023",
+    l1: "Revision and final updates.",
+    right: false,
+  },
+  {
+    id: "r18",
+    date: "October 2023",
+    l1: "Official release on mainnet.",
+    right: true,
+  },
+  {
+    id: "r19",
+    date: "November 2023",
+    l1: "The commencement of the media campaign.",
+    l2: "Seeding social media.",
+    right: false,
+  },
+  {
+    id: "r20",
+    date: "February 2024",
+    l1: "The media campaign kicks off in the mainstream media.",
+    l2: "Scads secured wallet completed.",
+    right: true,
+  },
+  {
+    id: "r21",
+    date: "February 2024",
+    l1: "Lending will be added based on a user's self-provided collateral for withdrawal (lending does not incur interest, only transactions fees).",
+    right: false,
+  },
+  {
+    id: "r22",
+    date: "March 2024",
+    l1: "Payment system. Users will be able to pay locally with scads pegged to value in local currency. (The pegging occurs only on the time of transaction).",
+    right: true,
+  },
+  {
+    id: "r23",
+    date: "March 2024",
+    l1: "New layer 0 blockchain, inspired by ZK protocol executed & based on POH.",
+    right: false,
+  },
+  {
+    id: "r23",
+    date: "September 2024",
+    l1: "Launch date",
+    right: true,
+  },
+];
+
+export const storyContent = [
+  {
+    id: "st1",
+    paragraph:
+      "Once upon a time in the bustling town of Digitalia, people used a currency called “Fiat”. This was what everyone used for their daily trades - from buying bread at the baker’s to geting a new pair of shoes. But there was a problem. The value of Fiat kept changing wildly. One day, a loaf of bread cost one Fiat, the next day it might cost two. This made life hard for the people of Digitalia",
+    img: fiat,
+  },
+  {
+    id: "st2",
+    paragraph:
+      "Then, one day, a group of wisemen introduced SCADS, a new kind of money. Unlike Fiat, SCADS was stable. It didn’t jump up and down in value. It was like a calm sea compared to the stormy waves of Fiat. The people of Digitalia were intrigued. “How does it work?” they asked",
+    img: dollar,
+  },
+  {
+    id: "st3",
+    paragraph:
+      "“It’s simple,” said the Creators. “SCADS is digital money. It lives on a magical ledger called blockchain, which is very secure and fair. Nobody has control of them, nobody will steal them from you. You own them. And Everyone can see the transactions, but no one can cheat or change them once they’re made.”",
+    img: bitcoin,
+  },
+  {
+    id: "st4",
+    paragraph:
+      "People started using SCADS for their everyday needs. They loved how stable it was. They loved that they own them. They believed that nobody would steal them or drop their value. Whether it was for a cup of cofee or paying the electricity bill, SCADS made everything smoother. And the best part? They didn’t need to carry cash or wait in long lines at the bank. Everything was done from their magical devices – smartphones and computers.",
+    img: family,
+  },
+  {
+    id: "st5",
+    paragraph:
+      "Then came TWINE. TWINE was special. It was not just stable but also grew over time, like a plant in fertile soil. The Creators explained, “By simply holding onto SCADS in your digital wallet, you can earn TWINE. Think of it as a reward for being a loyal user.”",
+    img: school,
+  },
+  {
+    id: "st6",
+    paragraph:
+      "People in Digitalia were excited. They started holding SCADS to earn TWINE. They found that TWINE was a great way to save for the future. Unlike their savings in the bank, which gave litle growth, TWINES grew steadily, ofering them a sense of security for their future needs. “What about our daily spending? Can we use SCADS everywhere?” asked the people. “Yes,” said the creators. “You can use SCADS in many places. You can buy groceries, pay for services, and even send money to your friends and family without any hassle.”",
+    img: old_people,
+  },
+  {
+    id: "st7",
+    paragraph:
+      "As time went by, Digitalia transformed. The unstable days of Fiat were gone. People felt more secure and confident in their financial dealings. SCADS and TWINE didn’t just change how they spent or saved money; it changed their lives, ofering stability and growth in an uncertain world",
+    img: second_family,
+  },
+  {
+    id: "st8",
+    paragraph:
+      "And so, the tale of SCADS and TWINE spread far and wide, as more people from neighboring towns adopted this new way of managing money, embracing a future where finance was stable, transparent, and accessible to all. And this is how the fiat story ended.",
+    img: sad_man,
   },
 ];

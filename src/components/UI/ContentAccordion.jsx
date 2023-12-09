@@ -5,6 +5,14 @@ import Card from "./Card";
 import { accordionCardVariants } from "../../Tools/variants";
 import { motion } from "framer-motion";
 
+import cube_one from "../../assets/cube_light.webp";
+import cube_two from "../../assets/second_cube.svg";
+import rectangle from "../../assets/rectangle_large.svg";
+import hexagon from "../../assets/hexagon.svg";
+import cube_one_dark from "../../assets/cube_large.webp";
+import sphere_dark from "../../assets/sphere_dark.svg";
+import sphere_dark_two from "../../assets/second_sphere_dark.svg";
+
 const isMobile = window.innerWidth < 768;
 
 let accordionCardPosition = {};
@@ -42,13 +50,27 @@ const ContentAccordion = ({ value }) => {
   const { theme } = value;
 
   return (
-    <div
-      className={`mt-24 ${
-        theme && "bg-[url('../src/assets/accordion-bg-dark.webp')]"
-      } ${
-        theme === false && "bg-[url('../src/assets/accordion-bg.webp')]"
-      } bg-fixed bg-cover`}
-    >
+    <div className="mt-24 bg-gradient-to-b from-[#FF006820] to-transparent relative">
+      <img
+        src={theme ? sphere_dark_two : rectangle}
+        className="absolute left-0 top-0 max-w-[160px] md:max-w-none"
+        alt="rectangle"
+      />
+      <img
+        src={hexagon}
+        className="absolute top-[40%] md:top-0 left-4 -translate-x-1/2 md:translate-x-0 md:left-[17%] lg:left-1/2 2xl:left-[20%] translate-y-3/4 max-w-[180px] md:max-w-none"
+        alt="hex"
+      />
+      <img
+        src={theme ? sphere_dark : cube_two}
+        className="absolute -right-24 md:right-[23%] 2xl:right-1/4 top-6"
+        alt="cube"
+      />
+      <img
+        src={theme ? cube_one_dark : cube_one}
+        className="absolute -right-24 -rotate-45 translate-y-[200%] hidden md:block"
+        alt="cube"
+      />
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -56,7 +78,7 @@ const ContentAccordion = ({ value }) => {
         variants={accordionCardPosition}
       >
         <Accordion
-          className="flex flex-col items-center justify-center py-32"
+          className="flex flex-col items-center justify-center py-24"
           transition
           transitionTimeout={500}
         >

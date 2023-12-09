@@ -13,9 +13,11 @@ export const opacityVariants = {
 export const priceCardVariants = {
   offscreen: {
     y: 300,
+    opacity: 0,
   },
   onscreen: {
     y: 0,
+    opacity: 1,
     transition: {
       type: "spring",
       bounce: 0.4,
@@ -25,10 +27,12 @@ export const priceCardVariants = {
 };
 export const tokenomicsCardVariants = {
   offscreen: {
-    y: 100,
+    y: 50,
+    opacity: 0,
   },
   onscreen: {
     y: 0,
+    opacity: 1,
     transition: {
       type: "spring",
       bounce: 0.4,
@@ -95,10 +99,12 @@ export const investPageVariants = {
 
 export const accordionCardVariants = {
   offscreen: {
-    y: 200,
+    y: 150,
+    opacity: 0,
   },
   onscreen: {
     y: 0,
+    opacity: 1,
     transition: {
       type: "spring",
       bounce: 0.4,
@@ -152,3 +158,64 @@ export const howToCardVariants = (item) => ({
     },
   },
 });
+
+export const roadmapCardVariantsToLeft = {
+  offscreen: {
+    x: 200,
+  },
+  onscreen: {
+    x: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 1,
+    },
+  },
+};
+export const roadmapCardVariantsToRight = {
+  offscreen: {
+    x: -200,
+  },
+  onscreen: {
+    x: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 1,
+    },
+  },
+};
+export const roadmapCardVariantsMobile = {
+  offscreen: {
+    y: 50,
+  },
+  onscreen: {
+    y: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 1,
+    },
+  },
+};
+
+export const fromTop = {
+  offscreen: {
+    y: -100,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+  },
+};
+export const fromBottom = {
+  offscreen: {
+    y: 100,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+  },
+};

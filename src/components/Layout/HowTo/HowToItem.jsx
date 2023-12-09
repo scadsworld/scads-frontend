@@ -7,7 +7,7 @@ const HowToItem = ({ step, value }) => {
 
   const stepClassName = `${
     theme ? "text-[#B6B6B6]" : "text-black"
-  } flex flex-col justify-center items-center py-4 px-8 font-['Poppins'] max-w-[340px] lg:max-w-[300px] xl:max-w-[379px]
+  } flex flex-col justify-center items-center py-4 px-8 font-['Poppins'] max-w-[330px] lg:max-w-[300px] xl:max-w-[379px]
   ${id === "Step 2" ? "md:mt-16 pb-10" : "mt-6"} 
   ${id === "Step 5" && "md:mt-[80px] lg:max-w-[360px]"} 
   ${id === "Step 8" && "md:mt-16"}
@@ -18,7 +18,7 @@ const HowToItem = ({ step, value }) => {
 
   return (
     <Card theme={theme} className={stepClassName}>
-      <h2 className="font-bold text-xl">{id}</h2>
+      <h2 className="font-bold text-xl ms-">{id}</h2>
       <p className="max-w-[351px] py-6">{text}</p>
       {img_two && <img src={img_two} className="pb-6" alt={`Step ${id} - 2`} />}
       {img && <img src={img} alt={`Step ${id}`} />}

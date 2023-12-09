@@ -15,6 +15,7 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "react-spring-carousel": "^2.0.19",
+    "react-tabs": "^6.0.2",
     "slick-slider": "^1.8.2",
     "web-vitals": "^2.1.4"
   },

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { news } from "../Tools/items-database";
 import Card from "../components/UI/Card";
-import line from "../assets/DecorativeLine.svg";
 
 const News = ({ value }) => {
   const { theme } = value;
@@ -12,17 +11,12 @@ const News = ({ value }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex flex-col items-center gap-20 mt-40 font-['Poppins'] relative md:h-screen overflow-hidden"
+      className="flex flex-col items-center gap-20 font-['Poppins'] relative overflow-hidden bg-gradient-to-b from-transparent to-[#FF006820] md:h-screen"
     >
-      <img
-        src={line}
-        className="absolute w-screen -top-64 left-0 lg:block hidden"
-        alt=""
-      />
       <div
         className={` ${
           theme ? "text-[#B6B6B6]" : "text-black"
-        } flex flex-col items-center`}
+        } flex flex-col items-center mt-40`}
       >
         <h1 className="text-[40px] font-bold">The News</h1>
         <p className="text-xl text-center lg:text-start">

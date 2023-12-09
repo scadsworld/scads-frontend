@@ -9,6 +9,8 @@ import InvestMobile from "./pages/InvestMobile";
 import News from "./pages/News";
 import { useLocation } from "react-router-dom";
 import HowTo from "./pages/HowTo";
+import Roadmap from "./pages/Roadmap";
+import Story from "./pages/Story";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -22,11 +24,11 @@ function App() {
 
   useEffect(() => {
     if (theme) {
-      document.body.classList.add("bg-[#191919]");
-      document.body.classList.remove("bg-[#E2E6E9]");
+      document.body.classList.add("bg-[#00000B]");
+      document.body.classList.remove("bg-[#e8ecff]");
     } else {
-      document.body.classList.remove("bg-[#191919]");
-      document.body.classList.add("bg-[#E2E6E9]");
+      document.body.classList.remove("bg-[#00000B]");
+      document.body.classList.add("bg-[#e8ecff]");
     }
   }, [theme]);
 
@@ -40,6 +42,8 @@ function App() {
           <Route path="/invest" element={<InvestMobile value={{ theme }} />} />
           <Route path="/news" element={<News value={{ theme }} />} />
           <Route path="/howto" element={<HowTo value={{ theme }} />} />
+          <Route path="/roadmap" element={<Roadmap value={{ theme }} />} />
+          <Route path="/story" element={<Story value={{ theme }} />} />
           <Route path="*" element={<Home value={{ theme, setOnScreen }} />} />
         </Routes>
       </AnimatePresence>

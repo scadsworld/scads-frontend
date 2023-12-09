@@ -6,9 +6,9 @@ import {
   walletCardVariants,
 } from "../../../Tools/variants";
 import Card from "../../UI/Card";
-import wallet_img from "../../../assets/wallet-image.webp";
-import wallet_img_dark from "../../../assets/wallet-image-dark.webp";
-import wallets_img_mobile from "../../../assets/wallets-bg-mobile.webp";
+import wallet_img from "../../../assets/wallets_image_light.webp";
+import wallet_img_dark from "../../../assets/wallets_img_dark.webp";
+import wallets_img_mobile from "../../../assets/wallets_img_mobile.webp";
 
 const isMobile = window.innerWidth < 768;
 let cardVariants = {};
@@ -51,7 +51,7 @@ const Wallets = ({ value }) => {
         alt=""
       />
       <div className="flex flex-col justify-center items-start gap-2 lg:gap-8 md:max-w-[700px] lg:max-w-[1100px] mx-auto mt-10">
-        <h1 className="relative z-10 text-white text-2xl lg:text-[40px] font-bold font-['Poppins'] ms-10">
+        <h1 className="relative z-10 text-[#B52761] text-2xl lg:text-[40px] font-bold font-['Poppins'] ms-10">
           Wallets
         </h1>
         <motion.div
@@ -68,16 +68,20 @@ const Wallets = ({ value }) => {
                   whileInView="onscreen"
                   viewport={{ once: true, amount: 0.8 }}
                   variants={textOpacity}
-                  className="flex flex-col gap-5 font-['Poppins'] ps-6 pe-20 md:ps-0 md:pe-0"
+                  className="flex flex-col gap-5 font-['Poppins'] ps-6 pe-20 md:ps-0 md:pe-0 "
                   key={item.id}
                 >
-                  <h1 className="text-[#7768E5] font-bold text-xl lg:text-2xl">
+                  <h1
+                    className={`${
+                      theme ? "text-white" : "text-[#B52761]"
+                    } font-bold text-xl lg:text-2xl`}
+                  >
                     {item.title}
                   </h1>
                   <p
                     className={`${
                       theme ? "text-[#B6B6B6]" : "text-black"
-                    } font-medium text-sm lg:text-base max-w-[243px] lg:max-w-[260px]`}
+                    } md:h-24 font-medium text-sm lg:text-base max-w-[243px] lg:max-w-[260px]`}
                   >
                     {item.description}
                   </p>
@@ -86,7 +90,7 @@ const Wallets = ({ value }) => {
             </div>
             <div className="flex justify-center py-7">
               <button
-                className="bg-[#7E57FF] py-[14px] px-9 rounded-[30px] font-semibold text-white text-xl hover:bg-[#511DFF] transition-all duration-300 focus:ring-0 focus:outline-none"
+                className="bg-[#B52761] py-[14px] px-9 rounded-[30px] font-semibold text-white text-xl hover:bg-[#655780] transition-all duration-300 focus:ring-0 focus:outline-none"
                 onClick={handleClickScroll}
               >
                 More Info
