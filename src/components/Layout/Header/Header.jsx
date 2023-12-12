@@ -29,16 +29,14 @@ const Header = ({ value }) => {
           <h2 className="max-w-[300px] md:max-w-none font-semibold text-xl text-center lg:text-start">
             {headerText.slogan}
           </h2>
-          <h3 className="text-xl font-semibold lg:max-w-none 2xl:max-w-[700px] text-center lg:text-start">
+          <h3 className="text-xl font-semibold max-w-[350px] lg:max-w-none 2xl:max-w-[700px] text-center lg:text-start">
             {headerText.subTitle}
           </h3>
-          <ul className="text-base font-light lg:font-normal lg:text-base 2xl:text-lg flex flex-col items-center text-center lg:text-start lg:items-start list-disc">
+          <ul className="text-base font-light lg:font-normal text-center lg:text-start lg:text-base 2xl:text-lg flex flex-col list-none md:list-disc max-w-[330px] mx-auto lg:max-w-[700px] 2xl:max-w-[700px]">
             <li>{headerText.text[0]}</li>
             <li>{headerText.text[1]}</li>
             <li>{headerText.text[2]}</li>
-            <li className="max-w-[350px] lg:max-w-[700px] 2xl:max-w-[700px]">
-              {headerText.text[3]}
-            </li>
+            <li>{headerText.text[3]}</li>
           </ul>
           <div className="flex items-center gap-2 md:gap-10">
             <button
@@ -48,20 +46,20 @@ const Header = ({ value }) => {
               Invest Now
             </button>
             <button
-              className="py-2 text-center px-6 md:py-4 md:px-8 border-2 border-[#BF205D] transition-all duration-300 hover:border-[#655780] rounded-3xl md:rounded-[30px] font-['Poppins'] text-[#BF205D] hover:text-[#655780] text-sm md:text-base 2xl:text-lg font-bold"
+              className="text-center py-3 px-4 md:py-4 md:px-8 border-2 border-[#BF205D] transition-all duration-300 hover:border-[#655780] rounded-3xl md:rounded-[30px] font-['Poppins'] text-[#BF205D] hover:text-[#655780] text-sm md:text-base 2xl:text-lg font-bold"
               onClick={handleClickScroll}
             >
               Read more
             </button>
             <Link
               to="/story"
-              className="py-2 text-center px-6 md:py-4 md:px-8 border-2 border-[#BF205D] transition-all duration-300 hover:border-[#655780] rounded-3xl md:rounded-[30px] font-['Poppins'] text-[#BF205D] hover:text-[#655780] text-sm md:text-base 2xl:text-lg font-bold"
+              className="text-center py-3 px-4 md:py-4 md:px-8 border-2 border-[#BF205D] transition-all duration-300 hover:border-[#655780] rounded-3xl md:rounded-[30px] font-['Poppins'] text-[#BF205D] hover:text-[#655780] text-sm md:text-base 2xl:text-lg font-bold"
             >
               Our story
             </Link>
             <Link
               to="/invest"
-              className="flex text-center items-center font-['Poppins'] text-white text-sm md:text-base font-bold rounded-3xl md:rounded-[30px] py-2 px-6 md:py-4 md:px-8 bg-gradient-to-r from-[#655780] via-[#BF205D] to-[#C01F5C] bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-500 lg:hidden"
+              className="flex text-center items-center font-['Poppins'] text-white text-sm md:text-base font-bold rounded-3xl md:rounded-[30px] py-3 px-4 md:py-4 md:px-8 bg-gradient-to-r from-[#655780] via-[#BF205D] to-[#C01F5C] bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-500 lg:hidden"
             >
               Invest now
             </Link>

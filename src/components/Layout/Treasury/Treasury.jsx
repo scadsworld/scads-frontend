@@ -8,7 +8,6 @@ import {
   fromTop,
   fromBottom,
 } from "../../../Tools/variants";
-import {} from "../../../Tools/variants";
 
 import dotted_line from "../../../assets/dotted_line.svg";
 import scads from "../../../assets/scads_symbol_lighttheme.svg";

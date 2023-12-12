@@ -36,7 +36,7 @@ const SwapScads = ({ value }) => {
         </div>
         <input
           type="number"
-          className={`bg-transparent text-[28px] focus:outline-none mt-14 font-['Poppins'] font-medium text-right md:max-w-[65%] ${
+          className={`bg-transparent text-[28px] focus:outline-none mt-14 font-['Poppins'] font-medium text-right md:text-left md:max-w-[65%] ${
             theme ? "placeholder:text-white" : "placeholder:text-black"
           }`}
           placeholder="0.00"
