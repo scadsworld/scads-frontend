@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import logo_light from "../../assets/logo_light.svg";
 import logo_dark from "../../assets/logo_dark.svg";
+import address_icon from "../../assets/addresses.svg";
+import globe from "../../assets/Earth Globe.svg";
 import { navLinks } from "../../Tools/items-database";
 import ThemeToggler from "../UI/ThemeToggler";
 import Hamburger from "../UI/Hamburger";
@@ -34,20 +36,16 @@ const Navbar = ({ value }) => {
   return (
     <>
       {/* DESKTOP NAVBAR */}
-      <div className="container mx-auto flex justify-center">
+      <div className="container flex justify-center mx-auto">
         <Card
           className={`hidden lg:flex justify-between rounded-2xl mt-6 items-center fixed top-0 z-20 font-['Poppins'] w-10/12 py-3 px-28 transition-all duration-300 backdrop-blur-lg ${textClass} ${bgClass}`}
           theme={theme}
         >
           <Link to="/">
-            <img
-              src={theme ? logo_dark : logo_light}
-              className={` max-w-[240px]`}
-              alt="logo"
-            />
+            <img src={theme ? logo_dark : logo_light} className={` max-w-[240px]`} alt="logo" />
           </Link>
           <div className="flex items-center gap-9">
-            <ul className="list-none flex gap-[30px]">
+            <ul className="list-none flex items-center gap-[30px]">
               <li>
                 <Link
                   to="/news"
@@ -83,6 +81,12 @@ const Navbar = ({ value }) => {
                   Roadmap
                 </Link>
               </li>
+              <li>
+                <img src={address_icon} alt="address icon" className={`${theme ? "" : "invert"}`} />
+              </li>
+              <li>
+                <img src={globe} alt="language icon" className={`${theme ? "" : "invert"}`} />
+              </li>
             </ul>
             <ThemeToggler value={value} />
             <button className="font-bold text-[20px]">Connect Wallet</button>
@@ -91,7 +95,7 @@ const Navbar = ({ value }) => {
       </div>
 
       {/* MOBILE NAVBAR */}
-      <div className="container mx-auto flex flex-col items-center justify-center fixed top-0 left-1/2 -translate-x-1/2 z-50">
+      <div className="container fixed top-0 z-50 flex flex-col items-center justify-center mx-auto -translate-x-1/2 left-1/2">
         <Card
           className={`flex justify-between w-11/12 items-center font-['Montserrat'] lg:hidden px-2 py-3 mt-2 ${
             theme && "bg-[#191919]"
@@ -100,11 +104,7 @@ const Navbar = ({ value }) => {
         >
           <h3>
             <Link to="/">
-              <img
-                src={theme ? logo_dark : logo_light}
-                className="max-w-[180px]"
-                alt="logo"
-              />
+              <img src={theme ? logo_dark : logo_light} className="max-w-[180px]" alt="logo" />
             </Link>
           </h3>
           <Hamburger value={{ theme, setIsOpen, isOpen }} />
@@ -124,7 +124,7 @@ const Navbar = ({ value }) => {
                 overflow: "hidden",
               }}
               transition={{ duration: 0.3 }}
-              className="w-11/12 py-6"
+              className="w-11/12 py-5"
             >
               <motion.div
                 initial={{
@@ -145,23 +145,25 @@ const Navbar = ({ value }) => {
                   }`}
                 >
                   <ThemeToggler value={value} setIsOpen={setIsOpen} />
-                  <ul className="list-none uppercase flex flex-col items-center justify-center gap-10">
+                  <ul className="flex flex-col items-center justify-center gap-10 uppercase list-none">
                     {navLinks.map((item) => (
                       <li key={item.id}>
-                        <Link
-                          to={item.path}
-                          className="text-lg font-medium"
-                          onClick={() => setIsOpen(false)}
-                        >
+                        <Link to={item.path} className="text-base font-medium" onClick={() => setIsOpen(false)}>
                           {item.text}
                         </Link>
                       </li>
                     ))}
+                    <div className="flex items-center gap-x-10">
+                      <li>
+                        <img src={address_icon} alt="address icon" className={`${theme ? "" : "invert"}`} />
+                      </li>
+                      <li>
+                        <img src={globe} alt="language icon" className={`${theme ? "" : "invert"}`} />
+                      </li>
+                    </div>
                   </ul>
                   <div>
-                    <button className="font-bold text-[20px]">
-                      Connect Wallet
-                    </button>
+                    <button className="font-black text-[20px]">Connect Wallet</button>
                   </div>
                 </Card>
               </motion.div>

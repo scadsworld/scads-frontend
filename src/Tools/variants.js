@@ -41,7 +41,7 @@ export const tokenomicsCardVariants = {
   },
 };
 
-export const treasuryCardVariants = (item) => ({
+export const treasuryCardVariants = (card) => ({
   offscreen: {
     y: 200,
   },
@@ -50,7 +50,7 @@ export const treasuryCardVariants = (item) => ({
     transition: {
       type: "spring",
       bounce: 0.4,
-      duration: item.duration,
+      duration: card.duration,
     },
   },
 });

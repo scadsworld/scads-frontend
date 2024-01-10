@@ -1,6 +1,6 @@
-import twitter from "../assets/twitter_logo 1.svg";
+import x from "../assets/logo-black.png";
 import telegram from "../assets/telegram_logo 1.svg";
-import facebook from "../assets/facebook_logo 1.svg";
+import medium from "../assets/iconmonstr-medium-1.svg";
 import instagram from "../assets/instagram_logo 1.svg";
 import discord from "../assets/discord_logo 1.svg";
 import github from "../assets/github_logo 1.svg";
@@ -29,11 +29,6 @@ import second_family from "../assets/polygomous_family.webp";
 import sad_man from "../assets/sad_man.webp";
 
 export const navLinks = [
-  {
-    id: "n0",
-    text: "Home",
-    path: "/",
-  },
   {
     id: "n1",
     text: "News",
@@ -193,8 +188,7 @@ export const wallets = [
   {
     id: "w1",
     title: "SCADS",
-    description:
-      "Decentralized, stable digital currency for secure global transactions, not pegged based on (POH).",
+    description: "Decentralized, stable digital currency for secure global transactions, not pegged based on (POH).",
   },
   {
     id: "w2",
@@ -210,8 +204,7 @@ export const wallets = [
   {
     id: "w4",
     title: "PULSE",
-    description:
-      "Self-sustained investment protocol & network effect within SCADS ecosystem.",
+    description: "Self-sustained investment protocol & network effect within SCADS ecosystem.",
   },
 
   {
@@ -222,8 +215,7 @@ export const wallets = [
   {
     id: "w6",
     title: "LIQUIDITY WALLET",
-    description:
-      "Is a depository to supply liquidity to the market as makers and liquidity providers.",
+    description: "Is a depository to supply liquidity to the market as makers and liquidity providers.",
   },
 ];
 
@@ -332,27 +324,29 @@ Integral Components: SCADS places utmost importance on the concept of reserve an
 export const social_icons = [
   {
     id: "i1",
-    icon: twitter,
+    icon: x,
+    redirect: "https://twitter.com/Scads_io",
   },
   {
     id: "i2",
     icon: telegram,
+    redirect: "https://t.me/scads_io",
   },
   {
     id: "i3",
-    icon: facebook,
-  },
-  {
-    id: "i4",
     icon: instagram,
   },
   {
-    id: "i5",
+    id: "i4",
     icon: discord,
   },
   {
-    id: "i6",
+    id: "i5",
     icon: github,
+  },
+  {
+    id: "i6",
+    icon: medium,
   },
 ];
 

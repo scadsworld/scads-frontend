@@ -32,7 +32,7 @@ const Header = ({ value }) => {
           <h3 className="text-xl font-semibold max-w-[350px] lg:max-w-none 2xl:max-w-[700px] text-center lg:text-start">
             {headerText.subTitle}
           </h3>
-          <ul className="text-base font-light lg:font-normal text-center lg:text-start lg:text-base 2xl:text-lg flex flex-col list-none md:list-disc max-w-[330px] mx-auto lg:max-w-[700px] 2xl:max-w-[700px]">
+          <ul className="text-base font-light lg:font-normal text-center lg:text-start lg:text-base 2xl:text-lg flex flex-col list-none max-w-[330px] mx-auto lg:max-w-[700px] 2xl:max-w-[700px]">
             <li>{headerText.text[0]}</li>
             <li>{headerText.text[1]}</li>
             <li>{headerText.text[2]}</li>
@@ -67,19 +67,9 @@ const Header = ({ value }) => {
         </div>
         <div>
           {theme === false ? (
-            <img
-              src={header_img_light}
-              fetchpriority="high"
-              className="hidden lg:block"
-              alt="header light mode"
-            />
+            <img src={header_img_light} fetchpriority="high" className="hidden lg:block" alt="header light mode" />
           ) : (
-            <img
-              src={header_img_dark}
-              fetchpriority="high"
-              className="px-20 hidden lg:block"
-              alt="header dark mode"
-            />
+            <img src={header_img_dark} fetchpriority="high" className="hidden px-20 lg:block" alt="header dark mode" />
           )}
         </div>
       </div>

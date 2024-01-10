@@ -8,11 +8,22 @@ const Footer = (props) => {
     <div
       className={`flex flex-col justify-center items-center pb-10 lg:pb-10 gap-6 ${props.className}`}
     >
-      <div className="flex gap-5">
+      <div className="flex items-center gap-5">
         {social_icons.map((item) => (
-          <button key={item.id}>
-            <img src={item.icon} className={`${theme && "invert"}`} alt="" />
-          </button>
+          <a
+            href={item.redirect}
+            target="_blank"
+            rel="noreferrer"
+            className="cursor-pointer"
+            key={item.id}
+          >
+            <img
+              src={item.icon}
+              className={`${theme && "invert"}`}
+              alt="social icon"
+              width={28}
+            />
+          </a>
         ))}
       </div>
       <p
