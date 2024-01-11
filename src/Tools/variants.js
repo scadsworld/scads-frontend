@@ -41,19 +41,18 @@ export const tokenomicsCardVariants = {
   },
 };
 
-export const treasuryCardVariants = (card) => ({
+export const treasuryCardVariants = {
   offscreen: {
-    y: 200,
+    y: 100,
   },
   onscreen: {
     y: 0,
     transition: {
       type: "spring",
       bounce: 0.4,
-      duration: card.duration,
     },
   },
-});
+};
 
 export const walletCardVariants = {
   offscreen: {
@@ -124,7 +123,7 @@ export const TWINECardVariants = {
   },
   exit: {
     opacity: 0,
-    x: 300, // Set your exit properties here
+    x: 300,
     duration: 1,
   },
 };
@@ -140,7 +139,7 @@ export const scadsCardVariants = {
   },
   exit: {
     opacity: 0,
-    x: -300, // Set your exit properties here
+    x: -300,
     duration: 1,
   },
 };
