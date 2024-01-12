@@ -19,7 +19,7 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top on route change
+    window.scrollTo(0, 0);
   }, [location]);
 
   useEffect(() => {

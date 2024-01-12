@@ -19,11 +19,11 @@ const Header = ({ value }) => {
     <div className={`${theme === false && "bg-[E2E6E9]"} `}>
       <div className="container mx-auto flex justify-center items-center font-['Poppins'] pb-20 pt-32 2xl:h-screen lg:pb-0 relative overflow-hidden">
         <div
-          className={`flex flex-col justify-center items-center lg:items-start gap-8 lg:py-20 xl:mx-20 z-10 ${
+          className={`flex flex-col justify-center items-center lg:items-start gap-8 lg:py-20 xl:mx-20 z-10 lg:w-1/2 ${
             theme ? "text-[#B6B6B6]" : "text-black"
           }`}
         >
-          <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl font-black max-w-[300px] lg:max-w-[600px] 2xl:max-w-[700px] text-center lg:text-start">
+          <h1 className="text-[26px] lg:text-4xl 2xl:text-5xl font-black max-w-[300px] lg:max-w-none text-center lg:text-start">
             {headerText.title}
           </h1>
           <h2 className="max-w-[300px] md:max-w-none font-semibold text-xl text-center lg:text-start">
@@ -32,7 +32,7 @@ const Header = ({ value }) => {
           <h3 className="text-xl font-semibold max-w-[350px] lg:max-w-none 2xl:max-w-[700px] text-center lg:text-start">
             {headerText.subTitle}
           </h3>
-          <ul className="text-base font-light lg:font-normal text-center lg:text-start lg:text-base 2xl:text-lg flex flex-col list-none max-w-[330px] mx-auto lg:max-w-[700px] 2xl:max-w-[700px]">
+          <ul className="text-base font-light lg:font-normal text-center lg:text-start lg:text-base 2xl:text-lg flex flex-col list-none max-w-[330px] mx-auto lg:max-w-none">
             <li>{headerText.text[0]}</li>
             <li>{headerText.text[1]}</li>
             <li>{headerText.text[2]}</li>

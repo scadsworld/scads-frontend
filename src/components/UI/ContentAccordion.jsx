@@ -30,9 +30,7 @@ const AccordionItem = ({ header, ...rest }) => (
         <img
           src={arrow}
           alt="accordion_arrow"
-          className={`transition-transform duration-500 ease-out ${
-            isEnter && "rotate-180"
-          }`}
+          className={`transition-transform duration-500 ease-out ${isEnter && "rotate-180"}`}
         />
       </>
     )}
@@ -77,19 +75,12 @@ const ContentAccordion = ({ value }) => {
         viewport={{ once: true, amount: 0.8 }}
         variants={accordionCardPosition}
       >
-        <Accordion
-          className="flex flex-col items-center justify-center py-24"
-          transition
-          transitionTimeout={500}
-        >
-          <Card
-            className="py-9 px-12 flex flex-col gap-20 lg:gap-16 w-[340px] lg:w-[790px]"
-            theme={theme}
-          >
+        <Accordion className="flex flex-col items-center justify-center py-24" transition transitionTimeout={500}>
+          <Card className="py-9 px-12 flex flex-col gap-20 lg:gap-16 w-[340px] lg:w-[900px]" theme={theme}>
             {accordionContent.map((item) => (
               <AccordionItem
                 header={item.header}
-                className={`max-w-[320px] lg:max-w-[691px] flex flex-col font-['Poppins'] text-base text-black ${
+                className={`max-w-[320px] lg:max-w-[860px] flex flex-col font-['Poppins'] text-base text-black ${
                   theme && "invert"
                 }`}
                 key={item.id}
